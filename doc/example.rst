@@ -10,3 +10,5 @@ Get 2017 data::
 
     cd DataExtract
     python get17Scores.py
+    
+This writes the file: Scores/2017_Scores_Men.csv
