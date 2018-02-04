@@ -1,5 +1,3 @@
-#!/usr/local/bin/python3.5
-
 # Author: Will Parker <mr.william.a.parker@gmail.com>
 """
 A script that calls classes to download 
@@ -34,9 +32,9 @@ def main():
     logging.basicConfig(filename='async.log',format='%(asctime)s %(message)s',level=logging.DEBUG)
             
     #controlling variables
-    divisions = [2] #Men's and Women's Rx Divisions
+    div = 1 # 1 is Men's, 2 is Women's Rx Divisions
     year = 2017
-    numberperpage = 30
+    numberperpage = 49 # this is what the URL shows
 
     
     #******************#
@@ -45,8 +43,7 @@ def main():
         
     #*******************#
     #Get Athlete Scores and Profiles from Interwebz
-    for div in divisions:
-       CFOpenData = extractScoresMainSite.extractScoresMainSite(div,year,numberperpage)
+    CFOpenData = extractScoresMainSite.extractScoresMainSite(div,year,numberperpage)
        #getProfile.getProfile(CFOpenData.Id_list, div, False)
         
 if __name__ == '__main__':
