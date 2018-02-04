@@ -1,9 +1,6 @@
-#!/usr/local/bin/python3.5
-
 # Author: Will Parker <mr.william.a.parker@gmail.com>
 """
-A class to download and process data from an open database of 
-CrossFit Open scores available at: http://openg.azurewebsites.net/
+A class to download and process data from an open database
 
 Usage:
 extractScores.extractScores(division,year,numberperpage)
@@ -52,12 +49,17 @@ class extractScoresMainSite():
     basepath = 'https://games.crossfit.com/competitions/api/v1/competitions/open/'
     async def downloadPage(self, sem, nParams, session):
         """
-        async function that checks semaphore unlocked before calling get function
+        async function that checks semaphore unlocked before calling get function.
     
-        :param sem: asyncio.Semaphore
-        :param nParams: dictionary of RESTful params
-        :param session: TCP session info of type aiohttp.ClientSession() 
-        :returns getPage: call function
+        Parameters
+        ----------
+        sem : asyncio.Semaphore.
+        nParams : dictionary of RESTful params.
+        session : TCP session info of type aiohttp.ClientSession() .
+
+        Returns
+        -------
+        getPage : call function.
         """
         async with sem:
             return await self.getPage(nParams, session)
@@ -65,10 +67,15 @@ class extractScoresMainSite():
     async def getPage(self, params, session):
         """
         async function that makes HTTP GET requests
-    
-        :param params: set of RESTful type parameters to describe response
-        :param session: TCP session info of type aiohttp.ClientSession()
-        :returns data: JSON response object
+
+        Parameters
+        ----------
+        params : set of RESTful type parameters to describe response.
+        session : TCP session info of type aiohttp.ClientSession().
+        
+        Returns
+        -------        
+        data : JSON response object.
         """
         logging.info("Params = " + str(params))
         async with session.get(self.basepath, params=params, headers=headers) as response:
@@ -78,9 +85,15 @@ class extractScoresMainSite():
     
     def getScores(self, response):
         """
-        function that extracts scores for each athletes
+        Function that extracts scores for each athletes.
     
-        :params response: JSON response object
+        Parameters
+        ----------
+        response : JSON response object
+        
+        Returns
+        -------        
+        data : JSON response object.        
         """
         WkScore = numpy.array(range(5))
         WkRank = numpy.array(range(5))
@@ -141,8 +154,10 @@ class extractScoresMainSite():
         """
         async function that creates semaphore and prepares HTTP GET requests by a segmented number of pages
     
-        :param start: page number at the beginning of this segment
-        :param numberofpages: number of pages in this segment
+        Parameters
+        ----------
+        start : page number at the beginning of this segment
+        numberofpages : number of pages in this segment
         """
         logging.info('loopPages from ' + str(start))
         async_list = []
@@ -166,7 +181,9 @@ class extractScoresMainSite():
         """
         function that creates an concurrent event loop
     
-        :params start: starting index of page number
+         Parameters
+        ----------
+        start : starting index of page number
         """
         self.Scores = pandas.DataFrame(columns=('Name', 'Division', 'OverallRank', 'Rank', 'Wk1_Score', 'Wk1_Rank',
                             'Wk2_Score', 'Wk2_Rank', 'Wk3_Score', 'Wk3_Rank', 'Wk4_Score', 'Wk4_Rank', 'Wk5_Score', 'Wk5_Rank'))
@@ -184,15 +201,18 @@ class extractScoresMainSite():
             self.Scores.to_csv(path_or_buf=filename, mode='a', header=False) #blocking function
             print(filename + " written to page " + str(start))
         
-    def __init__(self, div, year, numperpage):          
+    def __init__(self, div, scal, year, numperpage):          
         """
         Initialize the class. Gets the total number of pages in the class based on the requested
         number per page. Segments the total pages by an integer number of pages (nper) to ensure
-        sockets aren't maxed out (functions as a throttle)
+        sockets aren't maxed out (functions as a throttle).
         
-        :param div: integer describing the competitive division
-        :param year: integer describing the competition year
-        :param numperpage: integer describing the number of athletes to return per page
+        Parameters
+        ----------
+        div : integer describing the competitive division.
+        scal : Scaled. 1 if want Scaled data, 0 if want Rx
+        year : integer describing the competition year.
+        numperpage : integer describing the number of athletes to return per page.
         """
         self.division = div #for each division
         self.numperpage = numperpage
@@ -203,7 +223,7 @@ class extractScoresMainSite():
         response = requests.get(self.basepath,
                                params={
                                    "division": div,
-                                   "scaled": "0",
+                                   "scaled": scal,
                                    "sort": "0",
                                    "fittest": "1",
                                    "fittest1": "0",
@@ -226,6 +246,3 @@ class extractScoresMainSite():
             i = i + 1
             self.Scores = []
         self.startEventLoop(i*nper, endoflist)
-        
-        
-        
