@@ -220,6 +220,7 @@ class extractScoresMainSite():
         numperpage : integer describing the number of athletes to return per page.
         """
         self.division = div #for each division
+        self.scaled = scal # For Rx or scaled
         self.numperpage = numperpage
         self.year = year
         self.basepath = self.basepath+str(year)+"//leaderboards?"
