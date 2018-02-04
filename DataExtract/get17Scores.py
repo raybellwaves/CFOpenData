@@ -5,8 +5,12 @@ CrossFit Open scores, profile data, and affiliate lists
 """
 from getProfile import *
 from extractScoresMainSite import *
+
 import logging
 import pandas
+
+import time
+start_time = time.time()
     
 def getProfilesFromFile(score_filename, prof_filename, div):
     score_columns=['Id', 'Name', 'Division', 'OverallRank', 'Rank', 'Wk1_Score', 'Wk1_Rank', 
@@ -46,6 +50,7 @@ def main():
     #Get Athlete Scores and Profiles from Interwebz
     CFOpenData = extractScoresMainSite.extractScoresMainSite(div,scal,year,numberperpage)
        #getProfile.getProfile(CFOpenData.Id_list, div, False)
-        
+    print("script took " + str((time.time() - start_time) * 60.0) + "minutes)
+    
 if __name__ == '__main__':
     main()
