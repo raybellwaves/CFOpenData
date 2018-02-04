@@ -17,9 +17,9 @@ https://games.crossfit.com/competitions/api/v1/competitions/open/2017/leaderboar
 
 The key's I am interested in are::
 
-    $ userid # 1 - number of athletes
-    $ name # First and Last name
-    $ divisionid # 1 is individual Men, 2 is individual Women, others are listed in the Reddit post
-    $ scaled # 0 is Rx, 1 is Scale
+    userid # 1 - number of athletes
+    name # First and Last name
+    divisionid # 1 is individual Men, 2 is individual Women, others are listed in the Reddit post
+    scaled # 0 is Rx, 1 is Scale
     
 
