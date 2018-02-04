@@ -14,3 +14,4 @@ Get 2017 data::
 This writes the file: Scores/2017_Scores_Men.csv
 
 The last name is Ron Lyman. Can't work out why it isn't Sean Wray like in the URL
+Ron Lyman is last on the second last page. Need to increase the loop by 1
