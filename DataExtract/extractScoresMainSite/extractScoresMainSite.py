@@ -199,6 +199,7 @@ class extractScoresMainSite():
         loop.run_until_complete(future)
 
         filename = os.path.join(file_path, str(self.year) + "_" + file_enum[int(self.division)-1]) #create file in Scores directory
+        # e.g. Scores/2017_Scores_Men.csv
         if start == 0:
             self.Scores.to_csv(path_or_buf=filename) #blocking function
             print(filename + " written out.")
