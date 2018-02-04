@@ -33,6 +33,7 @@ def main():
             
     #controlling variables
     div = 1 # 1 is Men's, 2 is Women's Rx Divisions
+    scal = 0 # 0 for Rx, 1 for Scaled
     year = 2017
     numberperpage = 49 # this is what the URL shows
 
@@ -43,7 +44,7 @@ def main():
         
     #*******************#
     #Get Athlete Scores and Profiles from Interwebz
-    CFOpenData = extractScoresMainSite.extractScoresMainSite(div,year,numberperpage)
+    CFOpenData = extractScoresMainSite.extractScoresMainSite(div,scal,year,numberperpage)
        #getProfile.getProfile(CFOpenData.Id_list, div, False)
         
 if __name__ == '__main__':
