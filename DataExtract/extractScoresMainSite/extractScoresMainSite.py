@@ -1,9 +1,9 @@
 # Author: Will Parker <mr.william.a.parker@gmail.com>
 """
-A class to download and process data from an open database
+A class to download and process data from the mainsite.
 
 Usage:
-extractScores.extractScores(division,scaled,year,numberperpage)
+extractScoresMainSite.extractScoresMainSite(division,scaled,year,numberperpage)
 
 Parameters
 ----------
@@ -12,7 +12,7 @@ division : Defines the competitive division (i.e. Male Rx, Female Rx, etc)
 scaled : Defines if scaled or Rx
     0 is Rx, 1 is scaled.
 year: Defines the year of the competition
-    integer 2011-201717
+    integer 2011-2017
 numberperpage : number of athletes to extract per page
     integer
 """
@@ -238,7 +238,7 @@ class extractScoresMainSite():
                                },
                                headers=headers).json()
 
-        num_pages = response['totalpages'] #get number of pages
+        num_pages = response['totalpages'] #get number of pages. This is given in the API URL
         print("Number of Pages = " + str(num_pages))
 
         nper = 50 #number of pages in each block
