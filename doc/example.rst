@@ -12,3 +12,5 @@ Get 2017 data::
     python get17Scores.py
     
 This writes the file: Scores/2017_Scores_Men.csv
+
+The last name is Ron Lyman. Can't work out why it isn't Sean Wray like in the URL
