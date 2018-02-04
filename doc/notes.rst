@@ -1,9 +1,9 @@
 .. _notes:
 
-CrossFit open data is displayed at the URL
+CrossFit open data is displayed at the URL:
 https://games.crossfit.com/leaderboard/open/2017?division=2&region=0&scaled=0&sort=0&occupation=0&page=1
 
-This Reddit post explains how to download data from the site
+This Reddit post explains how to download data from the site:
 https://www.reddit.com/r/crossfit/comments/5uikq8/2017_open_data_analysis/
 To summarise: a page can be turned into a text file (or more accurately json 
 (JavaScript Object Notation File) file) which contains information stored as arrays)
