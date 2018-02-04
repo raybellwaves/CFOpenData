@@ -190,7 +190,7 @@ class extractScoresMainSite():
         ----------
         start : starting index of page number
         """
-        self.Scores = pandas.DataFrame(columns=('userid', 'Name', 'Division', 'OverallRank', 'Rank', 'Wk1_Score', 'Wk1_Rank',
+        self.Scores = pandas.DataFrame(columns=('userid', 'Name', 'Division', 'OverallRank', 'OverallScore', 'Wk1_Score', 'Wk1_Rank',
                             'Wk2_Score', 'Wk2_Rank', 'Wk3_Score', 'Wk3_Rank', 'Wk4_Score', 'Wk4_Rank', 'Wk5_Score', 'Wk5_Rank'))
         
         #loop through the first segment of pages
