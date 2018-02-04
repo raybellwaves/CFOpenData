@@ -1,8 +1,10 @@
 .. _example:
 
-DataExtract/get17Scores.py
-This will call extractScoresMainSite.extractScoresMainSite
+Example
+============
 
+Test the code `DataExtract/get17Scores.py`.
+This will call `extractScoresMainSite.extractScoresMainSite.py`
 
 Get 2017 data::
 
