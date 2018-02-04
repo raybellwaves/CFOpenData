@@ -3,13 +3,18 @@
 A class to download and process data from an open database
 
 Usage:
-extractScores.extractScores(division,year,numberperpage)
-:param division: Defines the competitive division (i.e. Male Rx, Female Rx, etc)
-:type division: integer 1-15
-:param year: Defines the year of the competition
-:type year: integer 11-16
-:param numberperpage: number of athletes to extract per page
-:type numberperpage: integer
+extractScores.extractScores(division,scaled,year,numberperpage)
+
+Parameters
+----------
+division : Defines the competitive division (i.e. Male Rx, Female Rx, etc)
+    integer: 1-15
+scaled : Defines if scaled or Rx
+    0 is Rx, 1 is scaled.
+year: Defines the year of the competition
+    integer 2011-201717
+numberperpage : number of athletes to extract per page
+    integer
 """
 
 __docformat__ = 'restructuredtext'
