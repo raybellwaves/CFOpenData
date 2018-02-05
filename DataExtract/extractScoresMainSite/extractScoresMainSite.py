@@ -191,7 +191,7 @@ class extractScoresMainSite():
         start : Starting index of page number.
         num_per_block : Number of pages per block.
         """
-        self.Scores = pandas.DataFrame(columns=('userid', 'Name', 'Division', 'OverallRank', 'OverallScore', 'Wk1_Score', 'Wk1_Rank',
+        self.Scores = pandas.DataFrame(columns=('Name', 'Division', 'OverallRank', 'OverallScore', 'Wk1_Score', 'Wk1_Rank',
                             'Wk2_Score', 'Wk2_Rank', 'Wk3_Score', 'Wk3_Rank', 'Wk4_Score', 'Wk4_Rank', 'Wk5_Score', 'Wk5_Rank'))
         
         #loop through the first segment of pages
