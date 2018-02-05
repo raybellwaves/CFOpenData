@@ -5,7 +5,7 @@ Python Script to Scrape CrossFit Open Data
 
 Basically all of the work was done by captamericadevs_ as discussed in his blog posts 1_, 2_ and 3_.
 
-I'm planning to add plotting Holoviews_.
+I'm planning to add plotting using Holoviews_.
 
 .. _captamericadevs: https://github.com/captamericadevs
 .. _1: https://captamericadevs.wordpress.com/2017/05/15/open-2017-data/
