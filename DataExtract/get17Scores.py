@@ -50,7 +50,7 @@ def main():
     #Get Athlete Scores and Profiles from MainSite
     CFOpenData = extractScoresMainSite.extractScoresMainSite(div,scal,year,numberperpage)
     #getProfile.getProfile(CFOpenData.Id_list, div, False)
-    print("script took " + str((time.time() - start_time) * 60.0) + "minutes)
+    print("script took " + str((time.time() - start_time) * 60.0) + "minutes")
     
 if __name__ == '__main__':
     main()
