@@ -31,3 +31,5 @@ Keep the time and store it as a TimeDelta (e.g. ...)
 Test writing a DataFrame with strings, integers and Time Delta's
 
 Plot using Holoviews
+
+Add percentile on plot. Test with googlesheet plot
