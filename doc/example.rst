@@ -23,7 +23,7 @@ This writes the file::
 The last name is Ron Lyman. Can't work out why it isn't Sean Wray like in the URL
 Ron Lyman is last on the second last page. TO DO increase the loop by 1
 
-It broke for me once and gave the error message:
+It broke for me once and gave the following error message. However, running the code again seemed to be fine:
 
 .. code:: python
 
