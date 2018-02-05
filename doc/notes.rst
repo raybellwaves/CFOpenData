@@ -33,3 +33,7 @@ Test writing a DataFrame with strings, integers and Time Delta's
 Plot using Holoviews
 
 Add percentile on plot. Test with googlesheet plot
+
+Long term TO DO (AKA will never do)
+
+EVA of workouts to workout physical limits
