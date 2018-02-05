@@ -21,3 +21,13 @@ The key's I am interested in are::
     name # First and Last name
     divisionid # 1 is individual Men, 2 is individual Women, others are listed in the Reddit post
     scaled # 0 is Rx, 1 is Scaled
+    
+_______________________
+
+TO DO
+
+Crossfit converts time (duration) into a score by using total number of seconds
+Keep the time and store it as a TimeDelta (e.g. ...)
+Test writing a DataFrame with strings, integers and Time Delta's
+
+Plot using Holoviews
