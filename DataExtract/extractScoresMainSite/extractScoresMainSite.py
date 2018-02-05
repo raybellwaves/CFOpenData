@@ -188,7 +188,8 @@ class extractScoresMainSite():
     
         Parameters
         ----------
-        start : starting index of page number
+        start : Starting index of page number.
+        num_per_block : Number of pages per block.
         """
         self.Scores = pandas.DataFrame(columns=('userid', 'Name', 'Division', 'OverallRank', 'OverallScore', 'Wk1_Score', 'Wk1_Rank',
                             'Wk2_Score', 'Wk2_Rank', 'Wk3_Score', 'Wk3_Rank', 'Wk4_Score', 'Wk4_Rank', 'Wk5_Score', 'Wk5_Rank'))
@@ -216,7 +217,7 @@ class extractScoresMainSite():
         Parameters
         ----------
         div : integer describing the competitive division.
-        scal : Scaled. 1 if want Scaled data, 0 if want Rx
+        scal : Scaled. 1 if want Scaled data, 0 if want Rx.
         year : integer describing the competition year.
         numperpage : integer describing the number of athletes to return per page.
         """
@@ -228,28 +229,27 @@ class extractScoresMainSite():
             
         #request page 1
         response = requests.get(self.basepath,
-                               params={
-                                   "division": div,
-                                   "scaled": scal,
-                                   "sort": "0",
-                                   "fittest": "1",
-                                   "fittest1": "0",
-                                   "occupation": "0",
-                                   "page": "1"
-                               },
-                               headers=headers).json()
+                                params={"division": div,
+                                        "scaled": scal,
+                                        "sort": "0",
+                                        "fittest": "1",
+                                        "fittest1": "0",
+                                        "occupation": "0",
+                                        "page": "1"},
+                                headers=headers).json()
 
-        num_pages = response['totalpages'] #get number of pages. This is given in the API URL
+        num_pages = response['totalpages'] # get number of pages. This is given in the API URL # 4,291
         print("Number of Pages = " + str(num_pages))
 
-        nper = 50 #number of pages in each block
-        endoflist = num_pages % nper #number in last block 
+        nper = 50 # number of pages in each block
+        endoflist = (num_pages % nper) + 1 #number in last block. # 42 
         
-        #Run the concurrent event loops
+        # Run the concurrent event loops
         i = 0
         while i < int(num_pages/nper):
             logging.info("Passing range from: " + str(i*nper))
-            self.startEventLoop(i*nper,nper) 
+            self.startEventLoop(i*nper,nper) # 0, 50; 50, 50; 100, 50; ...
             i = i + 1
             self.Scores = []
-        self.startEventLoop(i*nper, endoflist)
+        self.startEventLoop(i*nper, endoflist) # 4250, 42
+        # ? self.Scores = []
