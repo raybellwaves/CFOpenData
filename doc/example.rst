@@ -5,11 +5,11 @@ Example
 
 Test the code::
 
-    CFOpenData/DataExtract/get17Scores.py
+    #CFOpenData/DataExtract/get17Scores.py
     
 This will call::
 
-    CFOpenData/DataExtract/extractScoresMainSite/extractScoresMainSite.py
+    #CFOpenData/DataExtract/extractScoresMainSite/extractScoresMainSite.py
 
 Get 2017 data::
 
@@ -18,7 +18,7 @@ Get 2017 data::
     
 This writes the file::
 
-    DataExtract/Scores/2017_Scores_Men.csv
+    #DataExtract/Scores/2017_Scores_Men.csv
 
 The last name is Ron Lyman. Can't work out why it isn't Sean Wray like in the URL
 Ron Lyman is last on the second last page. TO DO increase the loop by 1
