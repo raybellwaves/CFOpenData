@@ -170,7 +170,7 @@ class extractScoresMainSite():
         
         async with ClientSession() as session:
             for p in range(start, start+numberofpages):
-                params={"division": self.division, "scaled": "0", "sort": "0", "fittest": "1", 
+                params={"division": self.division, "scaled": self.scaled, "sort": "0", "fittest": "1", 
                         "fittest1": "0", "occupation": "0","page": str(p)}
                 task = asyncio.ensure_future(self.downloadPage(sem, params, session))
                 async_list.append(task)
