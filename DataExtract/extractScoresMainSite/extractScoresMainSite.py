@@ -117,7 +117,8 @@ class extractScoresMainSite():
 
             for w in range(5): #loop through the workouts
                 try:
-                    if athletes[i]['scores'][w]['scoredisplay'] == '--' or athletes[i]['scores'][w]['scoredisplay'] == None or athletes[i]['scores'][w]['workoutrank'] == None: #if no score
+                    # no score
+                    if athletes[i]['scores'][w]['scoredisplay'] == '--' or athletes[i]['scores'][w]['scoredisplay'] == None or athletes[i]['scores'][w]['workoutrank'] == None:
                         WkScore[w] = 0
                         WkRank[w] = 0
                     elif "rep" in athletes[i]['scores'][w]['scoredisplay']: #if not a time
