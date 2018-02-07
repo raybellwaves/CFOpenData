@@ -1,13 +1,13 @@
 .. _notes:
 
-CrossFit open data is displayed online _here.
+CrossFit open data is displayed online here (1_).
 
 This Reddit_ post explains how to download data from the site.
 
 To summarise: a page can be turned into a text file (or more accurately json 
 (JavaScript Object Notation File) file) which contains information stored as arrays).
 
-For example, the URL_ shows the Men Rank 1 to Rank 49. This can be converted to a json file using this_ url.
+For example, the URL_ shows the Men Rank 1 to Rank 49. This can be converted to a json file using this url (2_).
 
 The key's I am interested in are::
 
@@ -35,9 +35,9 @@ Long term TO DO (AKA will never do)
 
 EVA of workouts to workout physical limits
 
-.. _here: https://games.crossfit.com/leaderboard/open/2017?division=1&region=0&scaled=0&sort=0&occupation=0&page=1
+.. _1: https://games.crossfit.com/leaderboard/open/2017?division=1&region=0&scaled=0&sort=0&occupation=0&page=1
 .. _Reddit: https://www.reddit.com/r/crossfit/comments/5uikq8/2017_open_data_analysis/
 .. _URL: https://games.crossfit.com/leaderboard/open/2017?division=1&region=0&scaled=0&sort=0&occupation=0&page=1
-.. _this: https://games.crossfit.com/competitions/api/v1/competitions/open/2017/leaderboards?page=1&competition=1&year=2017&division=1&scaled=0&sort=0&fittest=1&fittest1=0&occupation=0
+.. _2: https://games.crossfit.com/competitions/api/v1/competitions/open/2017/leaderboards?page=1&competition=1&year=2017&division=1&scaled=0&sort=0&fittest=1&fittest1=0&occupation=0
 .. _Holoviews: https://github.com/ioam/holoviews
 .. _seaborn: https://github.com/mwaskom/seaborn
