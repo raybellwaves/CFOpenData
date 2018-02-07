@@ -1,7 +1,7 @@
 CFOpenData
 =======================================
 
-Python Script to Scrape CrossFit Open Data
+Python Script to Scrape CrossFit Open Data.
 
 Basically all of the work was done by captamericadevs_ as discussed in his blog posts 1_, 2_ and 3_.
 
