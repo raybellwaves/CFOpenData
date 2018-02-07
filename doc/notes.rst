@@ -31,8 +31,11 @@ Keep the time and store it as a TimeDelta (e.g. ...)
 Test writing a DataFrame with strings, integers and Time Delta's
 
 Plot using Holoviews
+Distribution plots using seaborn
 
 Add percentile on plot. Test with googlesheet plot
+
+
 
 Long term TO DO (AKA will never do)
 
