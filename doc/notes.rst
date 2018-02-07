@@ -20,6 +20,8 @@ _______________________
 
 TO DO
 
+Workout why woman's score is showing random names at the start (first 27 names) and delete these.
+
 Crossfit converts time (duration) into a score by using total number of seconds
 Keep the time and store it as a TimeDelta (e.g. ...)
 Test writing a DataFrame with strings, integers and Time Delta's
