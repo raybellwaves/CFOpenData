@@ -172,7 +172,7 @@ class extractScoresMainSite():
         async with ClientSession() as session:
             for p in range(start, start+numberofpages):
                 params={"division": self.division, "scaled": self.scaled, "sort": "0", "fittest": "1", 
-                        "fittest1": "0", "occupation": "0","page": str(p)}
+                        "fittest1": "0", "occupation": "0", "competition": "1", "page": str(p)}
                 task = asyncio.ensure_future(self.downloadPage(sem, params, session))
                 async_list.append(task)
             results = await asyncio.gather(*async_list) 
@@ -236,6 +236,7 @@ class extractScoresMainSite():
                                         "fittest": "1",
                                         "fittest1": "0",
                                         "occupation": "0",
+                                        "competition": "1",
                                         "page": "1"},
                                 headers=headers).json()
 
@@ -253,4 +254,3 @@ class extractScoresMainSite():
             i = i + 1
             self.Scores = []
         self.startEventLoop(i*nper, endoflist) # 4250, 42
-        # ? self.Scores = []
